@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05-mar-2020 17:57:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ORM.Grupoespecialista" table="grupoespecialista" catalog="tortuforms" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="refugio" class="ORM.Refugio" fetch="select">
+            <column name="idReferencia_refugio" />
+        </many-to-one>
+        <property name="especialidad" type="string">
+            <column name="especialidad" length="20" />
+        </property>
+        <property name="capacidad" type="java.lang.Integer">
+            <column name="capacidad" />
+        </property>
+        <property name="expedicion" type="java.lang.Boolean">
+            <column name="expedicion" />
+        </property>
+        <property name="informes" type="java.lang.Integer">
+            <column name="informes" />
+        </property>
+        <set name="cuidadors" table="cuidador" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idReferencia_grupoEspecialista" />
+            </key>
+            <one-to-many class="ORM.Cuidador" />
+        </set>
+    </class>
+</hibernate-mapping>

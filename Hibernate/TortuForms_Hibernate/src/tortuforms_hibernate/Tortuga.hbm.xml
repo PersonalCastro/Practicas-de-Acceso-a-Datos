@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-ene-2020 9:43:00 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="tortuforms_hibernate.Tortuga" table="tortuga" catalog="tortuforms" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cuidador" class="tortuforms_hibernate.Cuidador" fetch="select">
+            <column name="idReferencia_Cuidador" />
+        </many-to-one>
+        <property name="apodo" type="string">
+            <column name="apodo" length="20" />
+        </property>
+        <property name="peso" type="java.lang.Long">
+            <column name="peso" precision="10" scale="0" />
+        </property>
+        <property name="hiberna" type="java.lang.Boolean">
+            <column name="hiberna" />
+        </property>
+        <property name="edad" type="java.lang.Integer">
+            <column name="edad" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<Refugios>
+    <refugio>
+        <id>1</id>
+        <nombre>Nombre</nombre>
+        <ciudad>Ciudad</ciudad>
+        <abierto>true</abierto>
+        <sucursales>0</sucursales>
+    </refugio>
+    <refugio>
+        <id>2</id>
+        <nombre>Nombre1</nombre>
+        <ciudad>Ciudad1</ciudad>
+        <abierto>true</abierto>
+        <sucursales>0</sucursales>
+    </refugio>
+
+</Refugios>
